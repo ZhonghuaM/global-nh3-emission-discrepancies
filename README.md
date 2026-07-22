@@ -6,23 +6,23 @@ Reproducibility materials for the manuscript **“Spatiotemporal discrepancies b
 
 This is a revision-stage repository. It currently provides the planned archive structure, dataset manifest, analysis configuration, variable dictionary, and a pinned description of the final local analysis environment. The manuscript, editorial correspondence, reviewer responses, raw third-party datasets, and sensitive working files are deliberately excluded.
 
-The analysis code and numerical source data will be added after path sanitisation and final quality control. The permanent data archive DOI will be linked here only after its record is active. Until then, this repository must not be cited as the final data archive.
+The numerical source data required by the journal will be added after final quality control. The custom code remains private during revision while local paths and HPC-specific configuration details are removed. The permanent data archive DOI will be linked here only after its record is active. Until then, this repository must not be cited as the final data archive.
 
 ## Planned contents
 
 - `config/`: portable path and analysis-parameter templates.
 - `environment/`: pinned software environment and version provenance.
-- `metadata/data_sources.csv`: source-product versions, identifiers, and official access locations.
+- `metadata/data_sources.csv`: verified source-product versions, identifiers, and official access locations.
 - `metadata/output_manifest.csv`: planned generated-data and figure-source-data archive.
 - `metadata/variable_dictionary.csv`: definitions and units for archived variables.
-- `scripts/`: sanitised analysis and figure-generation scripts, to be added after final review.
+- `scripts/`: revision-stage code-release notes; public code release is not part of the required data deposit.
 - `data/source_data/`: small numerical source tables for the main figures, to be added with the permanent archive.
 
 ## Data-access policy
 
-Third-party IASI, HTAP, ERA5, GPM IMERG, SPAM, and soil datasets are not redistributed. Their official access locations and persistent identifiers are listed in `metadata/data_sources.csv`. Users must obtain these inputs from the original providers and comply with the providers’ licences and terms.
+Third-party IASI, HTAP, ERA5, GPM IMERG, SPAM, and GSDE soil datasets are not redistributed. Their official access locations and persistent identifiers are listed in `metadata/data_sources.csv`. Users must obtain these inputs from the original providers and comply with the providers’ licences and terms.
 
-The planned permanent archive will contain the harmonised monthly outputs that the authors are permitted to redistribute, discrepancy and temporal-spread fields, numerical source data underlying Figures 1–5, Supplementary Data 1–4, a README, and variable- and unit-level metadata. Its DOI is intentionally omitted until active.
+The planned permanent archive will contain the numerical source data underlying Figures 1–5, Supplementary Data 1–4, a README, and variable- and unit-level metadata. Full harmonised model-output grids are not included in the mandatory deposit plan. The DOI is intentionally omitted until active.
 
 ## Core analysis definition
 
@@ -40,11 +40,12 @@ where TD is the satellite-constrained estimate and BU is the inventory-derived e
 - Monthly all-land summaries use grid-cell area weights.
 - Agricultural and non-agricultural summaries use grid-cell area multiplied by agricultural share or its complement.
 - Crop- and management-specific summaries use the corresponding SPAM physical-area share.
-- Figure 2 distribution summaries use weighted medians, interquartile ranges, 5th–95th percentile whiskers, and weighted means without month-to-month smoothing.
+- Figure 2 uses twelve unsmoothed, area-weighted boxplots calculated from pooled valid 0.1° grid-cell-month observations for 2008–2016; boxes show weighted interquartile ranges, centre lines weighted medians, whiskers weighted 5th–95th percentiles, and diamonds weighted means.
+- Figure 3 retains the author-supplied Gaussian-smoothed calendar-month weighted means and weighted population-standard-deviation bands (σ = 0.85 months).
 
 ## Citation
 
-A final software/data citation and DOI will be added after archival release. The provisional citation metadata are provided in `CITATION.cff`.
+A final data citation and DOI will be added after archival release. The provisional citation metadata are provided in `CITATION.cff`.
 
 ## Contact
 

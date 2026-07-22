@@ -1,6 +1,4 @@
 archive_component,planned_path,format,description,release_status
-Harmonised monthly outputs,data/harmonised/,NetCDF or GeoTIFF,Monthly satellite-constrained and inventory-derived emissions on the common 0.1 degree grid,Pending final archive
-Discrepancy fields,data/discrepancy/,NetCDF or GeoTIFF,Monthly NDI fields and multi-year temporal-spread diagnostics,Pending final archive
 Figure 1 source data,data/source_data/figure_1.csv,CSV,Numerical values underlying Figure 1,Pending final archive
 Figure 2 source data,data/source_data/figure_2.csv,CSV,Weighted monthly distribution summaries underlying Figure 2,Pending final archive
 Figure 3 source data,data/source_data/figure_3.csv,CSV,Weighted agricultural and non-agricultural monthly summaries underlying Figure 3,Pending final archive

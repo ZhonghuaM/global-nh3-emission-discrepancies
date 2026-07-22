@@ -1,7 +1,7 @@
 dataset,product_or_release,study_use,persistent_identifier,official_access,status_note
-IASI ammonia,ANNI-NH3-v2.1R-I,Satellite ammonia total columns,Pending verified record,https://iasi.aeris-data.fr/nh3/,Exact reanalysis record identifier under verification
-HTAP emissions,HTAP v3,Inventory-derived ammonia emissions,Pending verified record,https://edgar.jrc.ec.europa.eu/dataset_htap_v3,Official mosaic release record under verification
-ERA5,Monthly averaged data on single levels,Near-surface meteorology and LAI,Pending verified CDS record,https://cds.climate.copernicus.eu/,Exact CDS dataset record under verification
-GPM IMERG,GPM_3IMERGM.07 V07B,Monthly precipitation,Pending verified DOI,https://disc.gsfc.nasa.gov/,Locally verified from input filenames
-SPAM,SPAM2010 v2.0,Crop area and management classes,https://doi.org/10.7910/DVN/PRFF8V,https://doi.org/10.7910/DVN/PRFF8V,Verified
-Soil inputs,Multiple products,Soil-property covariates,Pending provenance resolution,,The analysed variables are not attributable to SoilGrids alone
+IASI ammonia,ANNI-NH3-v2.1R-I Level-2 morning reanalysis,Satellite ammonia total columns for 2008-2016,https://doi.org/10.1594/PANGAEA.894736,https://doi.org/10.1594/PANGAEA.894736,Verified from local product names and official dataset record
+HTAP emissions,HTAP_v3 v1 monthly 0.1-degree NH3 flux maps,Inventory-derived ammonia emissions for 2008-2016,https://doi.org/10.5281/zenodo.7516361,https://doi.org/10.5281/zenodo.7516361,Verified against the processed sector fields and official archive
+ERA5,Monthly averaged data on single levels,Near-surface meteorology precipitation and prescribed high/low vegetation LAI,https://doi.org/10.24381/cds.f17050d7,https://doi.org/10.24381/cds.f17050d7,Dataset identifier reanalysis-era5-single-levels-monthly-means
+GPM IMERG,GPM_3IMERGM.07 Final V07 (local granules V07B),Monthly precipitation used in the lifetime calculation,https://doi.org/10.5067/GPM/IMERG/3B-MONTH/07,https://doi.org/10.5067/GPM/IMERG/3B-MONTH/07,CMR accession C2723754851-GES_DISC
+SPAM,SPAM2010 v2.0 Harvard Dataverse V4,Crop physical area and management classes,https://doi.org/10.7910/DVN/PRFF8V,https://doi.org/10.7910/DVN/PRFF8V,Verified
+GSDE,Global Soil Dataset for Earth System Modeling 5-arc-minute release,Uppermost-layer soil-property covariates,https://doi.org/10.11888/Soil.tpdc.270578,https://doi.org/10.11888/Soil.tpdc.270578,Verified from final soil analysis code and workbook variables
