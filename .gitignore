@@ -1,0 +1,57 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+~$*
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*credentials*
+*secret*
+*token*
+config/paths.yml
+
+# Python and notebook artefacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+
+# Large, raw, cached, or provider-controlled data
+*.tif
+*.tiff
+*.nc
+*.nc4
+*.grib
+*.grb
+*.hdf
+*.h5
+*.parquet
+*.npz
+*.npy
+*.zip
+*.7z
+cache/
+raw/
+intermediate/
+
+# Manuscript and editorial files
+*.doc
+*.docx
+*.pdf
+*manuscript*
+*reviewer*
+*response*
+*editorial*
+
+# Generated figures unless deliberately force-added after review
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.eps

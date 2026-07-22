@@ -1,0 +1,16 @@
+variable,definition,units,scope
+TD,Satellite-constrained ammonia emission estimate,kg NH3 per grid cell per month,Grid-cell-month
+BU,Inventory-derived ammonia emission estimate,kg NH3 per grid cell per month,Grid-cell-month
+NDI,Normalised Discrepancy Index calculated as (TD-BU)/(TD+BU),dimensionless,Grid-cell-month
+temporal_spread,Standard deviation of monthly NDI through the study period,dimensionless,Grid cell
+cell_area,Land grid-cell area,ha,Grid cell
+agricultural_share,Fraction of grid-cell land area classified as agricultural,0-1,Grid cell
+t2m,2 m air temperature,K,Grid-cell-month
+d2m,2 m dew-point temperature,K,Grid-cell-month
+u10,10 m eastward wind component,m s-1,Grid-cell-month
+v10,10 m northward wind component,m s-1,Grid-cell-month
+sp,Surface pressure,Pa,Grid-cell-month
+e,Evaporation,m water equivalent,Grid-cell-month
+precipitation,GPM IMERG monthly precipitation total,mm month-1,Grid-cell-month
+lai_hv,ERA5 leaf area index for high vegetation,m2 m-2,Grid-cell-month
+lai_lv,ERA5 leaf area index for low vegetation,m2 m-2,Grid-cell-month

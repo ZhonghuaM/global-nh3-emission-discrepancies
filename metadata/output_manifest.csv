@@ -1,0 +1,12 @@
+archive_component,planned_path,format,description,release_status
+Harmonised monthly outputs,data/harmonised/,NetCDF or GeoTIFF,Monthly satellite-constrained and inventory-derived emissions on the common 0.1 degree grid,Pending final archive
+Discrepancy fields,data/discrepancy/,NetCDF or GeoTIFF,Monthly NDI fields and multi-year temporal-spread diagnostics,Pending final archive
+Figure 1 source data,data/source_data/figure_1.csv,CSV,Numerical values underlying Figure 1,Pending final archive
+Figure 2 source data,data/source_data/figure_2.csv,CSV,Weighted monthly distribution summaries underlying Figure 2,Pending final archive
+Figure 3 source data,data/source_data/figure_3.csv,CSV,Weighted agricultural and non-agricultural monthly summaries underlying Figure 3,Pending final archive
+Figure 4 source data,data/source_data/figure_4.csv,CSV,Weighted climate-bin observations and summaries underlying Figure 4,Pending final archive
+Figure 5 source data,data/source_data/figure_5.csv,CSV,Crop-region observations and smoothed summaries underlying Figure 5,Pending final archive
+Supplementary Data 1,data/supplementary_data/Supplementary_Data_1.xlsx,XLSX,Country-level summary statistics,Pending final archive
+Supplementary Data 2,data/supplementary_data/Supplementary_Data_2.xlsx,XLSX,Crop-region weighted statistics,Pending final archive
+Supplementary Data 3,data/supplementary_data/Supplementary_Data_3.xlsx,XLSX,Full soil-correlation results,Pending final archive
+Supplementary Data 4,data/supplementary_data/Supplementary_Data_4.xlsx,XLSX,Sample representativeness and stability audit,Pending final archive

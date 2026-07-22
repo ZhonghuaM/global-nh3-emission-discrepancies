@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please use the archived release citation once a DOI is available."
+title: "Reproducibility materials for global ammonia emission discrepancies"
+type: software
+version: 0.1.0
+date-released: 2026-07-22
+authors:
+  - family-names: Ma
+    given-names: Zhonghua
+    orcid: "https://orcid.org/0000-0003-2749-1615"
+  - family-names: Pan
+    given-names: Baobao
+  - family-names: Parkes
+    given-names: Ben
+  - family-names: Chen
+    given-names: Deli
+  - family-names: Pang
+    given-names: Alexis
+  - family-names: Zarco-Tejada
+    given-names: Pablo
+  - family-names: Foster
+    given-names: Timothy
+  - family-names: Lam
+    given-names: Shu Kee
+    orcid: "https://orcid.org/0000-0001-7943-5004"
+repository-code: "https://github.com/ZhonghuaM/global-nh3-emission-discrepancies"
+license: "LicenseRef-Pending-Coauthor-Approval"

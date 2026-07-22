@@ -1,0 +1,20 @@
+study:
+  start_year: 2008
+  end_year: 2016
+  temporal_resolution: monthly
+  grid_resolution_degrees: 0.1
+  coordinate_reference_system: EPSG:4326
+
+ndi:
+  formula: "(TD - BU) / (TD + BU)"
+  valid_min_exclusive: -0.99
+  valid_max_exclusive: 0.99
+
+agriculture:
+  primary_mask_threshold_percent: 5
+  robustness_thresholds_percent: [1, 5, 10]
+
+monthly_distributions:
+  quantiles: [0.05, 0.25, 0.50, 0.75, 0.95]
+  show_weighted_mean: true
+  month_to_month_smoothing: false

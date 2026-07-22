@@ -1,0 +1,14 @@
+# Copy this file to paths.yml and replace the example paths locally.
+# paths.yml is ignored by Git so local directory names cannot be published accidentally.
+inputs:
+  iasi_anni: /path/to/iasi_anni_v2_1r_i
+  htap_v3: /path/to/htap_v3
+  era5: /path/to/era5
+  gpm_imerg: /path/to/gpm_imerg_v07b
+  spam2010: /path/to/spam2010_v2_0
+  soil: /path/to/soil_inputs
+
+outputs:
+  harmonised: /path/to/harmonised_outputs
+  figures: /path/to/figures
+  tables: /path/to/tables
