@@ -7,8 +7,10 @@ study:
 
 ndi:
   formula: "(TD - BU) / (TD + BU)"
-  valid_min_exclusive: -0.99
-  valid_max_exclusive: 0.99
+  theoretical_range: [-1.0, 1.0]
+  # The illustrative helper accepts a configurable near-zero threshold.
+  # Set this in the same flux units as TD and BU for a new calculation.
+  minimum_combined_flux: 0.0
 
 agriculture:
   primary_mask_threshold_percent: 5
@@ -18,3 +20,17 @@ monthly_distributions:
   quantiles: [0.05, 0.25, 0.50, 0.75, 0.95]
   show_weighted_mean: true
   month_to_month_smoothing: false
+
+land_use_climatology:
+  gaussian_sigma_months: 0.85
+  gaussian_boundary_mode: wrap
+
+climate_relationships:
+  deterministic_display_seed: 42
+  bins_per_variable_and_domain: 100
+  gaussian_sigma_bins: 1.15
+  gaussian_boundary_mode: nearest
+
+crop_relationships:
+  deterministic_display_seed: 42
+  minimum_local_effective_sample_size: 5

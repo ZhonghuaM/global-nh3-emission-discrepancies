@@ -1,52 +1,129 @@
 # Global ammonia emission discrepancies
 
-Reproducibility materials for the manuscript **“Spatiotemporal discrepancies between satellite- and inventory-derived estimates of global ammonia emissions.”**
+[![Source data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21509244.svg)](https://doi.org/10.5281/zenodo.21509244)
 
-## Repository status
+Selected code, workflow documentation and example visualisations accompanying
+the manuscript **“Spatiotemporal discrepancies between satellite- and
+inventory-derived estimates of global ammonia emissions.”**
 
-This is a revision-stage repository. It currently provides the planned archive structure, dataset manifest, analysis configuration, variable dictionary, and a pinned description of the final local analysis environment. The manuscript, editorial correspondence, reviewer responses, raw third-party datasets, and sensitive working files are deliberately excluded.
+## Scope
 
-The numerical source data required by the journal will be added after final quality control. The custom code remains private during revision while local paths and HPC-specific configuration details are removed. The permanent data archive DOI will be linked here only after its record is active. Until then, this repository must not be cited as the final data archive.
+This public companion repository illustrates the principal analysis ideas:
 
-## Planned contents
+- aligning satellite-constrained (TD) and inventory-derived (BU) ammonia
+  emissions on a common monthly 0.1° grid;
+- calculating the Normalised Discrepancy Index (NDI);
+- applying area, agricultural-share and crop-area weights;
+- calculating weighted monthly distributions and climatologies; and
+- plotting selected numerical source data deposited with the paper.
 
-- `config/`: portable path and analysis-parameter templates.
-- `environment/`: pinned software environment and version provenance.
-- `metadata/data_sources.csv`: verified source-product versions, identifiers, and official access locations.
-- `metadata/output_manifest.csv`: planned generated-data and figure-source-data archive.
-- `metadata/variable_dictionary.csv`: definitions and units for archived variables.
-- `scripts/`: revision-stage code-release notes; public code release is not part of the required data deposit.
-- `data/source_data/`: small numerical source tables for the main figures, to be added with the permanent archive.
+The repository is intentionally selective. It is **not** the complete internal
+HPC workflow and does not reproduce provider-specific preprocessing from raw
+files. Raw IASI/ANNI, HTAP, ERA5, GPM IMERG, SPAM and GSDE data are not
+redistributed. Their official records are listed in
+[`metadata/data_sources.csv`](metadata/data_sources.csv).
 
-## Data-access policy
+## Public source data
 
-Third-party IASI, HTAP, ERA5, GPM IMERG, SPAM, and GSDE soil datasets are not redistributed. Their official access locations and persistent identifiers are listed in `metadata/data_sources.csv`. Users must obtain these inputs from the original providers and comply with the providers’ licences and terms.
+The numerical source data underlying Figs. 1–5 and Supplementary Data 1–4 are
+available without restriction from Zenodo:
 
-The planned permanent archive will contain the numerical source data underlying Figures 1–5, Supplementary Data 1–4, a README, and variable- and unit-level metadata. Full harmonised model-output grids are not included in the mandatory deposit plan. The DOI is intentionally omitted until active.
+> Ma, Z. Source data for “Spatiotemporal discrepancies between
+> satellite- and inventory-derived estimates of global ammonia emissions”.
+> Zenodo, [https://doi.org/10.5281/zenodo.21509244](https://doi.org/10.5281/zenodo.21509244).
 
-## Core analysis definition
+Download the Zenodo files to a local directory before running the plotting
+examples. The large third-party inputs used to construct those derived source
+data must be obtained separately from their original providers.
 
-The analysis compares monthly satellite-constrained and inventory-derived ammonia emissions on a common 0.1° grid for 2008–2016. The Normalised Discrepancy Index is
+## Analysis roadmap
 
-\[
-\mathrm{NDI} = \frac{\mathrm{TD}-\mathrm{BU}}{\mathrm{TD}+\mathrm{BU}},
-\]
+The documented workflow, boundaries of the public release and links between
+inputs, calculations and outputs are shown in
+[`docs/analysis-roadmap.md`](docs/analysis-roadmap.md).
 
-where TD is the satellite-constrained estimate and BU is the inventory-derived estimate on the same grid cell and month.
+At matched grid-cell and monthly resolution,
 
-## Reproducibility notes
+```text
+NDI = (TD - BU) / (TD + BU)
+```
 
-- Paths in the forthcoming scripts will be supplied through configuration files, not hard-coded user directories.
-- Monthly all-land summaries use grid-cell area weights.
-- Agricultural and non-agricultural summaries use grid-cell area multiplied by agricultural share or its complement.
-- Crop- and management-specific summaries use the corresponding SPAM physical-area share.
-- Figure 2 uses twelve unsmoothed, area-weighted boxplots calculated from pooled valid 0.1° grid-cell-month observations for 2008–2016; boxes show weighted interquartile ranges, centre lines weighted medians, whiskers weighted 5th–95th percentiles, and diamonds weighted means.
-- Figure 3 retains the author-supplied Gaussian-smoothed calendar-month weighted means and weighted population-standard-deviation bands (σ = 0.85 months).
+Positive NDI indicates that TD exceeds BU, negative NDI indicates that BU
+exceeds TD, and zero indicates agreement. The implementation masks invalid,
+negative or insufficient-denominator inputs before calculating the ratio.
+
+## Included examples
+
+- [`scripts/ndi_core.py`](scripts/ndi_core.py): guarded NDI calculation,
+  weighted mean, weighted population standard deviation, effective sample size
+  and weighted quantiles.
+- [`scripts/plot_public_source_data.py`](scripts/plot_public_source_data.py):
+  illustrative replots of the deposited monthly distribution and land-use
+  climatology summaries.
+- [`scripts/plot_global_ndi_banner.py`](scripts/plot_global_ndi_banner.py): a
+  deterministic global NDI banner from the deposited Fig. 1a GeoTIFF.
+- [`figures/source_data_examples.png`](figures/source_data_examples.png) and
+  [`figures/global_ndi_banner.png`](figures/global_ndi_banner.png): example
+  outputs from those scripts. These are repository illustrations, not the
+  typeset manuscript figures.
+
+## Quick start
+
+```bash
+conda env create -f environment/environment.yml
+conda activate global-nh3-emission-discrepancies
+
+python -m unittest discover -s tests
+
+python scripts/plot_public_source_data.py \
+  --data-dir /path/to/downloaded/zenodo-record \
+  --output figures/source_data_examples.png
+
+python scripts/plot_global_ndi_banner.py \
+  --raster /path/to/downloaded/zenodo-record/Figure_1_mean_NDI_2008-2016.tif \
+  --output figures/global_ndi_banner.png
+```
+
+Cartopy may download the Natural Earth 1:110 million public-domain country
+boundaries on first use. Local paths belong in `config/paths.yml`, which is
+ignored by Git.
+
+## Repository structure
+
+```text
+config/       Portable parameter and path templates
+data/         Data-access guidance (no raw provider data)
+docs/         Analysis roadmap and release boundaries
+environment/  Recorded software environment
+figures/      Selected repository-only example outputs
+metadata/     Product identifiers, outputs and variable definitions
+scripts/      Selected illustrative implementations
+tests/        Small numerical checks for the public helper functions
+```
+
+## Reproducibility boundary
+
+The scripts demonstrate the published equations, weighting logic and plotting
+of archived source data. They do not include credentials, private filesystem
+paths, scheduler configuration, unpublished intermediate arrays, manuscript
+files or editorial correspondence. Results requiring the original provider
+products and full historical HPC workflow are therefore outside this compact
+public release.
 
 ## Citation
 
-A final data citation and DOI will be added after archival release. The provisional citation metadata are provided in `CITATION.cff`.
+Please cite the paper when its article DOI is assigned and cite the Zenodo
+record above when using the numerical source data. Citation metadata for this
+repository are provided in [`CITATION.cff`](CITATION.cff).
+
+## Licences
+
+- Code is released under the [MIT License](LICENSE).
+- Author-created documentation and repository figures are released under
+  [CC BY 4.0](CONTENT_LICENSE.md).
+- The Zenodo source-data record has its own CC BY 4.0 licence.
+- Third-party inputs retain their providers’ licences and terms.
 
 ## Contact
 
-Repository maintainer: Zhonghua Ma ([ORCID 0000-0003-2749-1615](https://orcid.org/0000-0003-2749-1615)).
+Zhonghua Ma ([ORCID 0000-0003-2749-1615](https://orcid.org/0000-0003-2749-1615)).

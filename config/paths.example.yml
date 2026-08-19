@@ -1,14 +1,16 @@
-# Copy this file to paths.yml and replace the example paths locally.
-# paths.yml is ignored by Git so local directory names cannot be published accidentally.
-inputs:
+# Copy this file to paths.yml and replace the examples locally.
+# paths.yml is ignored so private filesystem locations are never committed.
+public_source_data:
+  zenodo_record: /path/to/downloaded/zenodo-record-21509244
+
+third_party_inputs:
   iasi_anni: /path/to/iasi_anni_v2_1r_i
-  htap_v3: /path/to/htap_v3
+  htap_v3: /path/to/htap_v3_v1
   era5: /path/to/era5
   gpm_imerg: /path/to/gpm_imerg_v07b
   spam2010: /path/to/spam2010_v2_0
-  soil: /path/to/soil_inputs
+  gsde: /path/to/gsde
 
 outputs:
-  harmonised: /path/to/harmonised_outputs
   figures: /path/to/figures
   tables: /path/to/tables

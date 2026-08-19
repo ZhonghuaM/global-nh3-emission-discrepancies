@@ -55,3 +55,7 @@ intermediate/
 *.jpeg
 *.svg
 *.eps
+
+# Curated public examples are deliberately versioned.
+!figures/global_ndi_banner.png
+!figures/source_data_examples.png

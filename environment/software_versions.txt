@@ -12,4 +12,4 @@ statsmodels  0.14.4
 Cartopy      0.24.1
 Matplotlib   3.10.0
 
-The historical Slurm version used for the original Spartan batch jobs was not retained and is therefore not asserted here. The final archive will record the scheduler version only if it can be recovered from the original job provenance or if the final workflow is rerun on Spartan.
+The historical Slurm version used for the original Spartan batch jobs was not retained and is therefore not asserted here. These versions document the verified final analysis/revision environment; the compact public scripts use only the relevant subset.

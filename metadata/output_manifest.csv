@@ -1,10 +1,12 @@
-archive_component,planned_path,format,description,release_status
-Figure 1 source data,data/source_data/figure_1.csv,CSV,Numerical values underlying Figure 1,Pending final archive
-Figure 2 source data,data/source_data/figure_2.csv,CSV,Weighted monthly distribution summaries underlying Figure 2,Pending final archive
-Figure 3 source data,data/source_data/figure_3.csv,CSV,Weighted agricultural and non-agricultural monthly summaries underlying Figure 3,Pending final archive
-Figure 4 source data,data/source_data/figure_4.csv,CSV,Weighted climate-bin observations and summaries underlying Figure 4,Pending final archive
-Figure 5 source data,data/source_data/figure_5.csv,CSV,Crop-region observations and smoothed summaries underlying Figure 5,Pending final archive
-Supplementary Data 1,data/supplementary_data/Supplementary_Data_1.xlsx,XLSX,Country-level summary statistics,Pending final archive
-Supplementary Data 2,data/supplementary_data/Supplementary_Data_2.xlsx,XLSX,Crop-region weighted statistics,Pending final archive
-Supplementary Data 3,data/supplementary_data/Supplementary_Data_3.xlsx,XLSX,Full soil-correlation results,Pending final archive
-Supplementary Data 4,data/supplementary_data/Supplementary_Data_4.xlsx,XLSX,Sample representativeness and stability audit,Pending final archive
+archive_component,zenodo_filename,format,description,release_status,persistent_identifier
+Figure 1 mean NDI,Figure_1_mean_NDI_2008-2016.tif,GeoTIFF,Multi-year mean NDI shown in Fig. 1a,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 1 temporal spread,Figure_1_temporal_SD_NDI_2008-2016.tif,GeoTIFF,Temporal standard deviation of monthly NDI shown in Fig. 1b,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 1 zonal statistics,Figure_1_latitudinal_zonal_statistics.csv,CSV,Five-degree latitude-band statistics shown in Fig. 1c,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 2 source data,Figure_2_monthly_weighted_boxplot_statistics.csv,CSV,Weighted monthly distribution summaries,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 3 source data,Figure_3_monthly_climatology_displayed.csv,CSV,Displayed monthly land-use climatologies and spread bands,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 4 source data,Figure_4_weighted_100_bin_displayed_curves.csv.gz,GZIP CSV,Weighted climate-bin curves and confidence intervals,Released,https://doi.org/10.5281/zenodo.21509244
+Figure 5 source data,Figure_5_supported_regional_gaussian_curves.csv.gz,GZIP CSV,Crop-region Gaussian curves and confidence intervals,Released,https://doi.org/10.5281/zenodo.21509244
+Supplementary Data 1,Supplementary_Data_1.xlsx,XLSX,Country-level summary statistics,Released,https://doi.org/10.5281/zenodo.21509244
+Supplementary Data 2,Supplementary_Data_2.xlsx,XLSX,Crop-region weighted statistics,Released,https://doi.org/10.5281/zenodo.21509244
+Supplementary Data 3,Supplementary_Data_3.xlsx,XLSX,Full soil-correlation results,Released,https://doi.org/10.5281/zenodo.21509244
+Supplementary Data 4,Supplementary_Data_4.xlsx,XLSX,Sample representativeness and stability audit,Released,https://doi.org/10.5281/zenodo.21509244
